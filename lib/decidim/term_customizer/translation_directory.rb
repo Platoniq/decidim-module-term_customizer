@@ -21,9 +21,7 @@ module Decidim
         translations_by_key(search).merge(translations_by_term(search))
       end
 
-      def translations_by_key(search)
-        translations.by_key(search)
-      end
+      delegate :by_key, to: :translations, prefix: true
 
       def translations_by_term(search, case_sensitive: false)
         translations.by_term(search, case_sensitive: case_sensitive)
