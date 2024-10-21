@@ -13,7 +13,7 @@ end
 def install_initializer(path, _env)
   Dir.chdir(path) do
     FileUtils.cp(
-      "#{__dir__}/lib/generators/decidim/app_templates/#env}/initializer.rb",
+      "#{__dir__}/lib/generators/decidim/app_templates/#{env}/initializer.rb",
       "config/initializers/decidim_term_customizer_config.rb"
     )
   end
