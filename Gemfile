@@ -28,6 +28,9 @@ group :development, :test do
 end
 
 group :development do
+  gem "decidim-participatory_processes", DECIDIM_VERSION
+  gem "decidim-proposals", DECIDIM_VERSION
+
   gem "letter_opener_web", "~> 2.0"
   gem "listen", "~> 3.1"
   gem "rubocop-faker"
