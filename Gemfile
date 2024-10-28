@@ -15,7 +15,7 @@ require_relative "#{base_path}lib/decidim/term_customizer/version"
 # DECIDIM_VERSION = Decidim::TermCustomizer::DECIDIM_VERSION
 DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "release/0.29-stable" }.freeze
 
-gem "decidim", DECIDIM_VERSION
+gem "decidim", git: "https://github.com/platoniq/decidim", branch: "fix/generator_set_cache_classes_with_env"
 gem "decidim-term_customizer", path: "."
 
 gem "bootsnap", "~> 1.4"
