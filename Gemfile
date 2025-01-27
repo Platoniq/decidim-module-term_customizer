@@ -12,8 +12,7 @@ require_relative "#{base_path}lib/decidim/term_customizer/version"
 
 # Use the latest version of Decidim from GitHub instead of the version from RubyGems until there is a released version
 # with this PR included: https://github.com/decidim/decidim/pull/13555
-# DECIDIM_VERSION = Decidim::TermCustomizer::DECIDIM_VERSION
-DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "release/0.29-stable" }.freeze
+DECIDIM_VERSION = Decidim::TermCustomizer::DECIDIM_VERSION
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-term_customizer", path: "."
