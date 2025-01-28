@@ -14,7 +14,7 @@ concurrency:
 jobs:
   lint:
     name: Lint code
-    uses: mainio/gha-decidim-module/.github/workflows/lint.yml@main
+    uses: Platoniq/gha-decidim-module/.github/workflows/lint.yml@main
     secrets: inherit
     with:
       eslint: true
