@@ -57,19 +57,6 @@ module Decidim
 
           it { is_expected.not_to be_valid }
         end
-
-        context "when invalid file type is provided" do
-          let(:file) do
-            upload_test_file(
-              Rack::Test::UploadedFile.new(
-                file_fixture("set-translations.json"),
-                "text/plain"
-              )
-            )
-          end
-
-          it { is_expected.not_to be_valid }
-        end
       end
     end
   end

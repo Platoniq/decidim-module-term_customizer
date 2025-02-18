@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "decidim/dev/common_rake"
+require "fileutils"
 
 def install_module(path)
   Dir.chdir(path) do
