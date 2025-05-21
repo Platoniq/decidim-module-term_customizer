@@ -15,13 +15,10 @@ module Decidim
 
       class << self
         def available_locales
-          if ENV["RAILS_GROUPS"] == "assets" || ENV["SKIP_DB_CHECK"] == "true"
-            I18n.available_locales
-          else
-            select("DISTINCT locale").to_a.map { |t| t.locale.to_sym }
-          end
+          return I18n.backend.backends.first.available_locales if ENV["RAILS_GROUPS"] == "assets" || ENV["SKIP_DB_CHECK"] == "true"
+          select("DISTINCT locale").pluck(:locale).map(&:to_sym)
         rescue ActiveRecord::NoDatabaseError, ActiveRecord::ConnectionNotEstablished
-          I18n.available_locales
+          I18n.backend.backends.first.available_locales
         end
       end
     end
