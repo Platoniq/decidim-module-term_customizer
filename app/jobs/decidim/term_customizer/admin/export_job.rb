@@ -11,7 +11,7 @@ module Decidim
             set.translations, TranslationSerializer
           ).export
 
-          ExportMailer.export(user, name, export_data).deliver_now
+          ExportMailer.export(user, export_data).deliver_now
         end
       end
     end
