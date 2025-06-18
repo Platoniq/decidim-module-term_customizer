@@ -6,7 +6,7 @@ module Decidim
       class ExportJob < ApplicationJob
         queue_as :default
 
-        def perform(user, set, name, format)
+        def perform(user, set, _name, format)
           export_data = Decidim::Exporters.find_exporter(format).new(
             set.translations, TranslationSerializer
           ).export
